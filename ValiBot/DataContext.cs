@@ -10,5 +10,7 @@ namespace ValiBot
         }
         
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Operation> Operations { get; set; }
     }
 }

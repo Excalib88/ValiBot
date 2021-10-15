@@ -13,6 +13,9 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.2.2" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.2.2" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.2.2" />
       <PackageReference Include="Telegram.Bot" Version="16.0.2" />
     </ItemGroup>
 

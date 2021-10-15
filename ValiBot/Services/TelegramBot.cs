@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Telegram.Bot;
 
-namespace ValiBot
+namespace ValiBot.Services
 {
     public class TelegramBot
     {
