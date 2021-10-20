@@ -33,11 +33,14 @@ namespace ValiBot
             services.AddSingleton<ICommandExecutor, CommandExecutor>();
             services.AddSingleton<IOperationService, OperationService>();
             services.AddSingleton<IUserService, UserService>();
+            services.AddSingleton<IAnalyticService, AnalyticService>();
             services.AddSingleton<BaseCommand, StartCommand>();
             services.AddSingleton<BaseCommand, FinishOperationCommand>();
             services.AddSingleton<BaseCommand, SelectCategoryCommand>();
             services.AddSingleton<BaseCommand, AddOperationCommand>();
             services.AddSingleton<BaseCommand, GetOperationsCommand>();
+            services.AddSingleton<BaseCommand, GetAnalyticsCommand>();
+            services.AddSingleton<BaseCommand, SelectAnalyticDaysCommand>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)

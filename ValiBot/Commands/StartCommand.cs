@@ -23,17 +23,22 @@ namespace ValiBot.Commands
         public override async Task ExecuteAsync(Update update)
         {
             var user = await _userService.GetOrCreate(update);
-            var inlineKeyboard = new InlineKeyboardMarkup(new[]
+            var inlineKeyboard = new ReplyKeyboardMarkup(new[]
             {
-                new InlineKeyboardButton
+                new[]
                 {
-                    Text = "Создать операцию",
-                    CallbackData = CommandNames.AddOperationCommand
-                },
-                new InlineKeyboardButton
-                {
-                    Text = "Получить операции",
-                    CallbackData = CommandNames.GetOperationsCommand
+                    new KeyboardButton
+                    {
+                        Text = "Создать операцию"
+                    },
+                    new KeyboardButton
+                    {
+                        Text = "Получить операции"
+                    },
+                    new KeyboardButton
+                    {
+                        Text = "Аналитика"
+                    }
                 }
             });
 

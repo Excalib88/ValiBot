@@ -24,16 +24,28 @@ namespace ValiBot.Services
             if(update?.Message?.Chat == null && update?.CallbackQuery == null)
                 return;
 
-            if (update.Type == UpdateType.CallbackQuery)
+            if (update.Type == UpdateType.Message)
             {
-                switch (update.CallbackQuery.Data)
+                switch (update.Message?.Text)
                 {
-                    case CommandNames.AddOperationCommand:
+                    case "Создать операцию":
                         await ExecuteCommand(CommandNames.AddOperationCommand, update);
                         return;
-                    case CommandNames.GetOperationsCommand:
+                    case "Получить операции":
                         await ExecuteCommand(CommandNames.GetOperationsCommand, update);
                         return;
+                    case "Аналитика":
+                        await ExecuteCommand(CommandNames.SelectAnalyticDaysCommand, update);
+                        return;
+                }
+            }
+
+            if (update.Type == UpdateType.CallbackQuery)
+            {
+                if (update.CallbackQuery.Data.Contains("analytic"))
+                {
+                    await ExecuteCommand(CommandNames.GetAnalyticsCommand, update);
+                    return;
                 }
             }
             
